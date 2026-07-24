@@ -212,7 +212,6 @@
 
 // export default App
 
-
 // import React from 'react'
 // import ControlledComponent from './Form Handeling/ControlledComponents'
 
@@ -228,13 +227,38 @@
 
 //!23/07/2026
 //!Axios
-import React from 'react'
-import Axios from './Axios/Axios'
+// import React from 'react'
+// import Axios from './Axios/Axios'
+
+// const App = () => {
+//   return (
+//    <Axios/>
+//   )
+// }
+
+// export default App
+
+//!24/07/2026
+
+import React from "react";
+import Home from "./React Router/Home";
+import About from "./React Router/About";
+import Contact from "./React Router/Contact";
+import Notfound from "./React Router/Notfound";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./React Router/Navbar";
+import "./navbar.css"
 
 const App = () => {
-  return (
-   <Axios/>
-  )
-}
+  return<>
+  <Navbar/>
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/about" element={<About/>} />
+      <Route path="/contact" element={<Contact/>} />
+      <Route path="*" element={<Notfound/>} />
+    </Routes>
+  </>;
+};
 
-export default App
+export default App;
