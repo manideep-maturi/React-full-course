@@ -248,6 +248,7 @@ import Notfound from "./React Router/Notfound";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./React Router/Navbar";
 import "./navbar.css"
+import Student from "./React Router/Student";
 
 const App = () => {
   return<>
@@ -257,6 +258,7 @@ const App = () => {
       <Route path="/about" element={<About/>} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="*" element={<Notfound/>} />
+      <Route path="/student/:id/:name" element={<Student/>}></Route>
     </Routes>
   </>;
 };
