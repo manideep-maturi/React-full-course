@@ -247,20 +247,36 @@ import Contact from "./React Router/Contact";
 import Notfound from "./React Router/Notfound";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./React Router/Navbar";
-import "./navbar.css"
+import "./navbar.css";
 import Student from "./React Router/Student";
+import Login from "./React Router/Login";
+import Dashboard from "./React Router/Dashboard";
+import Protectedrouter from "./React Router/Protectedrouter";
 
 const App = () => {
-  return<>
-  <Navbar/>
-    <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/about" element={<About/>} />
-      <Route path="/contact" element={<Contact/>} />
-      <Route path="*" element={<Notfound/>} />
-      <Route path="/student/:id/:name" element={<Student/>}></Route>
-    </Routes>
-  </>;
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Notfound />} />
+
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/dashboard"
+          element={
+            <Protectedrouter>
+              <Dashboard />
+            </Protectedrouter>
+          }
+        />
+
+        <Route path="/student/:id/:name" element={<Student />}></Route>
+      </Routes>
+    </>
+  );
 };
 
 export default App;
