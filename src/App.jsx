@@ -252,6 +252,9 @@ import Student from "./React Router/Student";
 import Login from "./React Router/Login";
 import Dashboard from "./React Router/Dashboard";
 import Protectedrouter from "./React Router/Protectedrouter";
+import Profile from "./React Router/Profile";
+import Orders from "./React Router/Orders";
+import Services from "./React Router/Services";
 
 const App = () => {
   return (
@@ -271,8 +274,11 @@ const App = () => {
               <Dashboard />
             </Protectedrouter>
           }
-        />
-
+        >
+          <Route path="profile" element={<Profile />} />
+          <Route path="services" element={<Services />} />
+          <Route path="orders" element={<Orders />} />
+        </Route>
         <Route path="/student/:id/:name" element={<Student />}></Route>
       </Routes>
     </>
