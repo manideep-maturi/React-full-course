@@ -240,49 +240,64 @@
 
 //!24/07/2026
 
-import React from "react";
-import Home from "./React Router/Home";
-import About from "./React Router/About";
-import Contact from "./React Router/Contact";
-import Notfound from "./React Router/Notfound";
-import { Route, Routes } from "react-router-dom";
-import Navbar from "./React Router/Navbar";
-import "./navbar.css";
-import Student from "./React Router/Student";
-import Login from "./React Router/Login";
-import Dashboard from "./React Router/Dashboard";
-import Protectedrouter from "./React Router/Protectedrouter";
-import Profile from "./React Router/Profile";
-import Orders from "./React Router/Orders";
-import Services from "./React Router/Services";
+// import React from "react";
+// import Home from "./React Router/Home";
+// import About from "./React Router/About";
+// import Contact from "./React Router/Contact";
+// import Notfound from "./React Router/Notfound";
+// import { Route, Routes } from "react-router-dom";
+// import Navbar from "./React Router/Navbar";
+// import "./navbar.css";
+// import Student from "./React Router/Student";
+// import Login from "./React Router/Login";
+// import Dashboard from "./React Router/Dashboard";
+// import Protectedrouter from "./React Router/Protectedrouter";
+// import Profile from "./React Router/Profile";
+// import Orders from "./React Router/Orders";
+// import Services from "./React Router/Services";
+
+// const App = () => {
+//   return (
+//     <>
+//       <Navbar />
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/about" element={<About />} />
+//         <Route path="/contact" element={<Contact />} />
+//         <Route path="*" element={<Notfound />} />
+
+//         <Route path="/login" element={<Login />} />
+//         <Route
+//           path="/dashboard"
+//           element={
+//             <Protectedrouter>
+//               <Dashboard />
+//             </Protectedrouter>
+//           }
+//         >
+//           <Route path="profile" element={<Profile />} />
+//           <Route path="services" element={<Services />} />
+//           <Route path="orders" element={<Orders />} />
+//         </Route>
+//         <Route path="/student/:id/:name" element={<Student />}></Route>
+//       </Routes>
+//     </>
+//   );
+// };
+
+// export default App;
+
+
+//!28/07/2026
+import React from 'react'
+import Pure from './Pure Components/Pure'
+import Regular from './Pure Components/Regular'
 
 const App = () => {
-  return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<Notfound />} />
+  return <>
+  <Regular/>
+  <Pure/>
+  </>
+}
 
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/dashboard"
-          element={
-            <Protectedrouter>
-              <Dashboard />
-            </Protectedrouter>
-          }
-        >
-          <Route path="profile" element={<Profile />} />
-          <Route path="services" element={<Services />} />
-          <Route path="orders" element={<Orders />} />
-        </Route>
-        <Route path="/student/:id/:name" element={<Student />}></Route>
-      </Routes>
-    </>
-  );
-};
-
-export default App;
+export default App
