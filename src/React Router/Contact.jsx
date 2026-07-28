@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <><h1>Contact</h1>
     <h1>email:{state?.email}</h1>
-    <h2>Password: {State?.password}</h2>
+    <h2>Password: {state?.password}</h2>
     </>
   )
 }

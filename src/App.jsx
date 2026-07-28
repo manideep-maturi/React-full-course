@@ -287,17 +287,91 @@
 
 // export default App;
 
-
 //!28/07/2026
-import React from 'react'
-import Pure from './Pure Components/Pure'
-import Regular from './Pure Components/Regular'
+// import React from 'react'
+// import Pure from './Pure Components/Pure'
+// import Regular from './Pure Components/Regular'
+
+// const App = () => {
+//   return <>
+//   <Regular/>
+//   <Pure/>
+//   </>
+// }
+
+// export default App
+
+//!memo()
+// import React, { useState } from "react";
+// import MemoComponents from "./Memo/MemoComponents";
+// import Regular from "./Memo/Regular";
+
+// const App = () => {
+//   let [state, setState] = useState({
+//     name: "MANIDEEP",
+//   });
+//   return (
+//     <>
+//       <MemoComponents details={state.name} />
+//       <Regular details={state.name} />
+//       <button onClick={() => setState({ name: "Manideep" })}>
+//         Change the name
+//       </button>
+//     </>
+//   );
+// };
+
+// export default App;
+
+//!lazy
+
+import React from "react";
+import { lazy, Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./React Router/Navbar";
+import "./navbar.css";
+
+const Home = lazy(() => import("./React Router/Home"));
+const About = lazy(() => import("./React Router/About"));
+const Contact = lazy(() => import("./React Router/Contact"));
+const Notfound = lazy(() => import("./React Router/Notfound"));
+const Student = lazy(() => import("./React Router/Student"));
+const Login = lazy(() => import("./React Router/login"));
+const Dashboard = lazy(() => import("./React Router/Dashboard"));
+const Protectedrouter = lazy(() => import("./React Router/Protectedrouter"));
+const Profile = lazy(() => import("./React Router/Profile"));
+const Orders = lazy(() => import("./React Router/Orders"));
+const Services = lazy(() => import("./React Router/Services"));
 
 const App = () => {
-  return <>
-  <Regular/>
-  <Pure/>
-  </>
-}
+  return (
+    <>
+      <Navbar />
+      <Suspense fallback={<h1>Loding Avuthundhi Raa.. Wait Chey</h1>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Notfound />} />
 
-export default App
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/dashboard"
+            element={
+              <Protectedrouter>
+                <Dashboard />
+              </Protectedrouter>
+            }
+          >
+            <Route path="profile" element={<Profile />} />
+            <Route path="services" element={<Services />} />
+            <Route path="orders" element={<Orders />} />
+          </Route>
+          <Route path="/student/:id/:name" element={<Student />}></Route>
+        </Routes>
+      </Suspense>
+    </>
+  );
+};
+
+export default App;
