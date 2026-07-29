@@ -422,13 +422,13 @@
 // export default App;
 
 //!POPUP
-import React from 'react'
-import Popup from "./Portels/Popup";
+// import React from 'react'
+// import Popup from "./Portels/Popup";
 
-const App = () => {
-  return <>
-  <Popup/>
-  </>
-}
+// const App = () => {
+//   return <>
+//   <Popup/>
+//   </>
+// }
 
-export default App
+// export default App
