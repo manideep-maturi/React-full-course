@@ -432,3 +432,24 @@
 // }
 
 // export default App
+
+//!30/07/2026
+import React from "react";
+import Counter1 from "./Customhook/Counter1";
+import Counter2 from "./Customhook/Counter2";
+import FetchData from "./Customhook/FetchData";
+import RecipeData from "./Customhook/RecipeData";
+
+const App = () => {
+  return (
+    <>
+      <Counter1 />
+      <Counter2 />
+      <FetchData />
+      <hr />
+      <RecipeData />
+    </>
+  );
+};
+
+export default App;
